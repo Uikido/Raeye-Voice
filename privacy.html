@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raeye Voice Privacy Policy</title>
-  <meta name="description" content="Privacy Policy for the Raeye Voice communication and learning app, including child privacy, local data storage, and support contact details." />
+  <meta name="description" content="Privacy Policy for the Raeye Voice communication and learning app, including child privacy, local data storage, parent authentication, and support contact details." />
   <meta property="og:title" content="Raeye Voice Privacy Policy" />
   <meta property="og:description" content="Privacy Policy for the Raeye Voice communication and learning app." />
   <meta property="og:type" content="website" />
@@ -35,19 +35,15 @@
       --color-bg: #f8fbff;
       --color-surface: #ffffff;
       --color-surface-2: #f1f7ff;
-      --color-surface-3: #eef8ff;
       --color-border: #dce9f8;
       --color-divider: #e5eef9;
       --color-text: #1b2b44;
       --color-text-muted: #5f7393;
-      --color-text-faint: #8fa0bc;
       --color-text-inverse: #ffffff;
       --color-primary: #4a8cff;
       --color-primary-2: #7ac7ff;
-      --color-primary-3: #9fe1ff;
       --color-primary-hover: #2f72eb;
       --color-primary-soft: #e6f1ff;
-      --color-success: #53b894;
       --radius-sm: 0.375rem;
       --radius-md: 0.75rem;
       --radius-lg: 1rem;
@@ -56,14 +52,14 @@
       --radius-full: 9999px;
       --shadow-sm: 0 6px 16px rgba(74, 140, 255, 0.08);
       --shadow-md: 0 16px 40px rgba(74, 140, 255, 0.12);
-      --shadow-lg: 0 24px 60px rgba(74, 140, 255, 0.16);
-      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
       --content-default: 76rem;
-      --font-display: 'Clash Display', 'Trebuchet MS', sans-serif;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --font-display: 'Clash Display', sans-serif;
       --font-body: 'Satoshi', 'Inter', sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     html {
       -moz-text-size-adjust: none;
       -webkit-text-size-adjust: none;
@@ -74,6 +70,7 @@
       scroll-behavior: smooth;
       scroll-padding-top: 6rem;
     }
+
     body {
       min-height: 100dvh;
       line-height: 1.65;
@@ -87,12 +84,15 @@
     }
 
     img, svg { display: block; max-width: 100%; }
-    a { color: var(--color-primary-hover); text-underline-offset: 0.16em; }
-    a:hover { color: var(--color-primary); }
-    button { cursor: pointer; border: 0; background: none; }
-    a, button {
+
+    a {
+      color: var(--color-primary-hover);
+      text-underline-offset: 0.16em;
       transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
     }
+
+    a:hover { color: var(--color-primary); }
+
     :focus-visible {
       outline: 2px solid var(--color-primary);
       outline-offset: 3px;
@@ -108,7 +108,9 @@
       padding: var(--space-3) var(--space-4);
       border-radius: var(--radius-full);
       z-index: 100;
+      text-decoration: none;
     }
+
     .skip-link:focus { top: var(--space-4); }
 
     .site-header {
@@ -158,11 +160,23 @@
       font-size: var(--text-base);
       line-height: 1.05;
     }
+
     .brand-text span {
       display: block;
       color: var(--color-text-muted);
       font-size: var(--text-xs);
       margin-top: 0.1rem;
+    }
+
+    .header-link {
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-primary-hover);
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(122, 170, 235, 0.18);
+      padding: 0.7rem 1rem;
+      border-radius: var(--radius-full);
     }
 
     .hero {
@@ -346,14 +360,8 @@
     }
 
     p + p { margin-top: var(--space-4); }
-    ul { margin-top: var(--space-4); }
+    ul { margin-top: var(--space-4); padding-left: 1.15rem; }
     li + li { margin-top: var(--space-3); }
-
-    .bullet-list,
-    .rights-list,
-    .contact-list {
-      padding-left: 1.15rem;
-    }
 
     .mini-note {
       margin-top: var(--space-4);
@@ -385,8 +393,7 @@
 
     .note-card p,
     .contact-card p,
-    .contact-card li,
-    code {
+    .contact-card li {
       color: var(--color-text-muted);
       font-size: var(--text-sm);
     }
@@ -411,6 +418,7 @@
       .content-grid {
         grid-template-columns: 1fr;
       }
+
       .aside-stack { position: static; }
       h1 { max-width: 100%; }
     }
@@ -418,12 +426,8 @@
     @media (max-width: 640px) {
       .container { width: min(calc(100% - 1.25rem), var(--content-default)); }
       .header-inner { min-height: 4rem; }
-      .hero,
-      main { overflow: clip; }
-      .hero-card,
-      .policy-card,
-      .note-card,
-      .contact-card { border-radius: var(--radius-xl); }
+      .hero, main { overflow: clip; }
+      .hero-card, .policy-card, .note-card, .contact-card { border-radius: var(--radius-xl); }
       .brand-mark { width: 2.7rem; height: 2.7rem; }
     }
 
@@ -438,11 +442,11 @@
   </style>
 </head>
 <body>
-  <!-- <a class="skip-link" href="#main-content">Skip to content</a> -->
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Raeye Voice Privacy Policy home">
+      <a class="brand" href="/index.html" aria-label="Raeye Voice home">
         <span class="brand-mark" aria-hidden="true">
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="15" cy="15" r="11" stroke="currentColor" stroke-width="1.8" opacity="0.9"/>
@@ -456,16 +460,22 @@
           <span>Child communication support app</span>
         </span>
       </a>
+
+      <a class="header-link" href="/index.html">Home</a>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="hero" id="top">
+    <section class="hero">
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">Privacy & Child Safety</span>
           <h1>Privacy Policy for Raeye Voice</h1>
-          <p class="hero-copy">Effective Date: May 2026. Raeye Voice is designed to support children’s communication and learning experiences under the supervision of a parent or guardian, with a privacy-first approach, parental controls, Firebase Authentication for parent accounts, and minimal data collection.</p>
+          <p class="hero-copy">
+            Effective Date: May 2026. Raeye Voice is designed to support children’s communication
+            and learning experiences under the supervision of a parent or guardian, with parental
+            controls and minimal data collection.
+          </p>
         </div>
 
         <aside class="hero-card" aria-label="Policy highlights">
@@ -473,7 +483,7 @@
           <ul class="summary-list">
             <li>
               <strong>Minimal data collection</strong>
-              <span>Only limited information is collected for authentication, parent controls, and app functionality.</span>
+              <span>Only limited information is used for parent authentication, parental controls, and app functionality.</span>
             </li>
             <li>
               <strong>Parent-supervised use</strong>
@@ -499,16 +509,14 @@
           <p>We are committed to protecting user privacy, minimizing data collection, and creating a safe experience for children and families.</p>
         </div>
 
-        
-
         <section class="policy-section" id="info-we-collect">
           <h2>1. Information We Collect</h2>
-          <p>Raeye Voice collects only limited information necessary for authentication, parental controls, app functionality, and learning features.</p>
+          <p>Raeye Voice collects only limited information necessary for parent authentication, parental controls, app functionality, and learning features.</p>
 
           <h3>Information provided by parents or guardians may include:</h3>
-          <ul class="bullet-list">
+          <ul>
             <li>Email address used for authentication.</li>
-            <li>Parent authentication credentials through Firebase Authentication.</li>
+            <li>Parent account authentication information processed through Firebase Authentication, such as email address and account identifier.</li>
             <li>Parent PIN or protected settings access.</li>
             <li>Language preferences.</li>
             <li>Optional custom voice recordings.</li>
@@ -517,7 +525,7 @@
           </ul>
 
           <h3>The app may also locally store:</h3>
-          <ul class="bullet-list">
+          <ul>
             <li>Learning preferences.</li>
             <li>Selected language.</li>
             <li>Saved categories and icons.</li>
@@ -526,7 +534,9 @@
             <li>Offline communication content.</li>
           </ul>
 
-          <div class="mini-note">Most learning-related information is stored locally on the device.</div>
+          <div class="mini-note">
+            Most learning-related information is stored locally on the device. We do not store child learning data in Firebase. Firebase Authentication is used only for parent account sign-in and related authentication functions.
+          </div>
         </section>
 
         <section class="policy-section" id="children-privacy">
@@ -538,30 +548,31 @@
 
         <section class="policy-section" id="third-party-services">
           <h2>3. Third-Party Services</h2>
-          <p>Raeye Voice uses trusted third-party services only for core app functionality.</p>
+          <p>Raeye Voice uses limited third-party services only as necessary for core app functionality.</p>
 
           <h3>These services may include:</h3>
-          <ul class="bullet-list">
-            <li>Firebase Authentication provided by Google for secure parent account authentication.</li>
-            <li>Firebase services for app stability and security.</li>
-            <li>YouTube links or embedded educational content selected by parents or guardians.</li>
+          <ul>
+            <li>Firebase Authentication provided by Google for secure parent account sign-in and account management.</li>
+            <li>YouTube links or external educational content selected by parents, guardians, educators, or therapists.</li>
           </ul>
 
           <h3>Raeye Voice does not use:</h3>
-          <ul class="bullet-list">
+          <ul>
             <li>Third-party advertising SDKs.</li>
             <li>Personalized advertising.</li>
             <li>Data brokers.</li>
             <li>Behavioral advertising systems.</li>
           </ul>
 
-          <div class="mini-note">No personal information is sold to third parties.</div>
+          <div class="mini-note">
+            We do not sell personal information to third parties. Third-party platforms such as YouTube may collect information according to their own privacy policies and terms when users access external content.
+          </div>
         </section>
 
         <section class="policy-section" id="how-we-use-information">
           <h2>4. How We Use Information</h2>
           <p>Information is used only to:</p>
-          <ul class="bullet-list">
+          <ul>
             <li>Authenticate parent accounts.</li>
             <li>Maintain app functionality.</li>
             <li>Save learning preferences.</li>
@@ -574,7 +585,7 @@
         <section class="policy-section" id="youtube-external-content">
           <h2>5. YouTube and External Learning Content</h2>
           <p>Some learning experiences within Raeye Voice may open educational YouTube videos or external content selected by parents, guardians, educators, or therapists.</p>
-          <p>When accessing third-party platforms such as YouTube, users may also be subject to the privacy policies and terms of those services.</p>
+          <p>When users access third-party platforms such as YouTube, those services may collect information under their own privacy policies and terms.</p>
           <p>Raeye Voice does not use YouTube viewing activity for advertising or behavioral profiling.</p>
         </section>
 
@@ -582,20 +593,20 @@
           <h2>6. Account Deletion</h2>
           <p>Parents or guardians may delete their account directly from the Parent View section of the app.</p>
           <p>For child safety and parental control purposes, account deletion is protected behind parent authentication and cannot be performed by a child user.</p>
-          <p>When an account is deleted, associated authentication data is removed.</p>
+          <p>When an account is deleted, associated parent authentication data used for account sign-in is removed.</p>
           <p>Locally stored data may remain on the device until the application is removed or app data is cleared by the user.</p>
         </section>
 
         <section class="policy-section" id="data-security">
           <h2>7. Data Security</h2>
-          <p>We use reasonable security measures to protect stored information, including secure authentication systems, protected parent settings, Parent PIN protection, standard mobile platform security protections, and minimized online data collection.</p>
+          <p>We use reasonable security measures to protect stored information, including secure authentication systems, protected parent settings, parent PIN protection, standard mobile platform security protections, and minimized online data collection.</p>
           <p>However, no method of electronic storage or transmission is completely secure.</p>
         </section>
 
         <section class="policy-section" id="data-retention">
           <h2>8. Data Retention</h2>
           <p>Most user-generated content and learning information remain stored locally on the device unless cloud functionality is introduced in future versions and explicitly enabled by the parent or guardian.</p>
-          <p>Authentication-related information may be retained as required for account management and security purposes.</p>
+          <p>Authentication-related information may be retained as required for account management, legal compliance, fraud prevention, or security purposes.</p>
         </section>
 
         <section class="policy-section" id="changes">
@@ -620,9 +631,7 @@
 
         <section class="contact-card">
           <h3>Quick contact</h3>
-          <ul class="contact-list">
-            <li><a href="mailto:support@ttechnos.com">support@ttechnos.com</a></li>
-          </ul>
+          <p><a href="mailto:support@ttechnos.com">support@ttechnos.com</a></p>
         </section>
 
         <section class="note-card">
